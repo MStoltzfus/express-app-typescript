@@ -14,7 +14,7 @@ interface newSipQueueCall {
     EventName: string;
     QueueDisplayName: string;
     RemotePartyUri: string;
-    RemotePartyNumber: string;
+    RemotePartyId: string;
     CallStartDateTime: string;
     CallsInQueue: number;
     NumberOfAvailableAgents: number;
