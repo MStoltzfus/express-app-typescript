@@ -1,35 +1,15 @@
 import { ComponentChild, FunctionalComponent, h, VNode } from 'preact';
 import { Stack, IStackTokens } from '@fluentui/react';
 import { DefaultButton, PrimaryButton } from '@fluentui/react/lib/Button';
-import data from '../testData.js';
+import { actualWebhookData } from '../testData.js';
 
 import Utils from '../../frontendUtils/frontendUtils';
 
 import { Login } from '@microsoft/mgt-react';
 
-interface webhookProps {
-    EventName: string;
-    ScenarioId: string;
-    CallStartDateTime: string;
-    RemotePartyName: string;
-    RemotePartyUri: string;
-    RemotePartyNumber: string;
-    RemotePartyId: string;
-    QueueDisplayName: string;
-    CallsInQueue: number;
-    NumberOfAvailableAgents: number;
-    CallEndDateTime: string;
-    CallLength: string;
-    AgentUPN: string;
-    TalkTime: string;
-    WaitTime: string;
-    CallbackRequested: boolean;
-    TimedOut: boolean;
-    Abandoned: boolean;
-    ServiceLevelAchieved: boolean;
-}
-
 const App: FunctionalComponent = () => {
+
+    let i = 1;
 
     Utils.foo();
     console.log( process.env.NODE_ENV );
@@ -42,13 +22,19 @@ const App: FunctionalComponent = () => {
                 </header>
             </div>
             <div id="preact_root">
-                <h1>Test</h1>
-                <h2>Test</h2>
-                <h3>Test</h3>
-                <p>Test</p>
-                <ul>
-                    {data.map( ( item: { name: any } ) => <li>{item.name}</li> )}
-                </ul>
+                <Stack horizontal horizontalAlign="center">
+                    <Stack.Item>
+                        <ul>
+                            {actualWebhookData.map( item => (
+                                <li key={item.ScenarioId + '_' + ++i}>
+                                    <div>{item.ScenarioId}</div>
+                                    <div>{item.EventName}</div>
+                                    <div>{item.QueueDisplayName}</div>
+                                </li>
+                            ) )}
+                        </ul>
+                    </Stack.Item>
+                </Stack>
             </div>
             <div style={{ maxWidth: "250px" }}>
                 <Stack>
