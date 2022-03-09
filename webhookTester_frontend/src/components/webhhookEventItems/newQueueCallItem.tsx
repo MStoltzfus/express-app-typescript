@@ -15,14 +15,15 @@ function newQueueCall( props:any ): h.JSX.Element {
 function newPstnQueueCallItem( props: newPstnQueueCall ): h.JSX.Element {
     return (
         <div>
-            <p>{props.ScenarioId}</p>
-            <p>{props.EventName}</p>
-            <p>{props.QueueDisplayName}</p>
-            <p>{props.RemotePartyName}</p>
-            <p>{props.RemotePartyNumber}</p>
-            <p>{props.CallStartDateTime}</p>
-            <p>{props.CallsInQueue}</p>
-            <p>{props.NumberOfAvailableAgents}</p>
+            <h3>New PSTN Queue Call</h3>
+            <p>Scenario ID - {props.ScenarioId}</p>
+            <p>Event - {props.EventName}</p>
+            <p>Queue - {props.QueueDisplayName}</p>
+            <p>Caller Name - {props.RemotePartyName}</p>
+            <p>Caller Number - {props.RemotePartyNumber}</p>
+            <p>Call Start Date/Time - {props.CallStartDateTime}</p>
+            <p>Calls in Queue - {props.CallsInQueue}</p>
+            <p>Available Agents - {props.NumberOfAvailableAgents}</p>
         </div>
     );
 }
@@ -30,14 +31,15 @@ function newPstnQueueCallItem( props: newPstnQueueCall ): h.JSX.Element {
 function newSipQueueCallItem( props: newSipQueueCall ): h.JSX.Element {
     return (
         <div>
-            <p>{props.ScenarioId}</p>
-            <p>{props.EventName}</p>
-            <p>{props.QueueDisplayName}</p>
-            <p>{props.RemotePartyUri}</p>
-            <p>{props.RemotePartyId}</p>
-            <p>{props.CallStartDateTime}</p>
-            <p>{props.CallsInQueue}</p>
-            <p>{props.NumberOfAvailableAgents}</p>
+            <h3>New SIP Queue Call</h3>
+            <p>Scenario ID - {props.ScenarioId}</p>
+            <p>Event - {props.EventName}</p>
+            <p>Queue - {props.QueueDisplayName}</p>
+            <p>Caller URI - {props.RemotePartyUri}</p>
+            <p>Caller Id - {props.RemotePartyId}</p>
+            <p>Call Start Date/Time - {props.CallStartDateTime}</p>
+            <p>Calls in Queue - {props.CallsInQueue}</p>
+            <p>Available Agents - {props.NumberOfAvailableAgents}</p>
         </div>
     );
 }

@@ -17,20 +17,21 @@ function endCall( props:any ): h.JSX.Element {
 function endPstnCallItem( props: endPstnCall ) {
     return (
         <div>
-            <p>{props.ScenarioId}</p>
-            <p>{props.EventName}</p>
-            <p>{props.QueueDisplayName}</p>
-            <p>{props.RemotePartyName}</p>
-            <p>{props.RemotePartyNumber}</p>
-            <p>{props.CallStartDateTime}</p>
-            <p>{props.CallEndDateTime}</p>
-            <p>{props.CallLength}</p>
-            <p>{props.TalkTime}</p>
-            <p>{props.WaitTime}</p>
-            <p>{props.CallbackRequested}</p>
-            <p>{props.Timeout}</p>
-            <p>{props.Abandoned}</p>
-            <p>{props.ServiceLevelAchieved}</p>
+            <h3>PSTN Call Ended</h3>
+            <p>Scenario ID - {props.ScenarioId}</p>
+            <p>Event - {props.EventName}</p>
+            <p>Queue - {props.QueueDisplayName}</p>
+            <p>Caller Name - {props.RemotePartyName}</p>
+            <p>Caller Number - {props.RemotePartyNumber}</p>
+            <p>Call Start Date/Time - {props.CallStartDateTime}</p>
+            <p>Call End Date/Time - {props.CallEndDateTime}</p>
+            <p>Call Length - {props.CallLength}</p>
+            <p>Talk Time - {props.TalkTime}</p>
+            <p>Wait Time - {props.WaitTime}</p>
+            <p>Callback Requested? - {props.CallbackRequested == true ? 'true' : 'false'}</p>
+            <p>Timed out? - {props.Timeout == true ? 'true' : 'false'}</p>
+            <p>Abandoned? - {props.Abandoned == true ? 'true' : 'false'}</p>
+            <p>Service Level Achieved? - {props.ServiceLevelAchieved == true ? 'true' : 'false'}</p>
         </div>
     );
 }
@@ -38,20 +39,20 @@ function endPstnCallItem( props: endPstnCall ) {
 function endSipCallItem( props: endSipCall ) {
     return (
         <div>
-            <p>{props.ScenarioId}</p>
-            <p>{props.EventName}</p>
-            <p>{props.QueueDisplayName}</p>
-            <p>{props.RemotePartyUri}</p>
-            <p>{props.RemotePartyId}</p>
-            <p>{props.CallStartDateTime}</p>
-            <p>{props.CallEndDateTime}</p>
-            <p>{props.CallLength}</p>
-            <p>{props.TalkTime}</p>
-            <p>{props.WaitTime}</p>
-            <p>{props.CallbackRequested}</p>
-            <p>{props.Timeout}</p>
-            <p>{props.Abandoned}</p>
-            <p>{props.ServiceLevelAchieved}</p>
+            <h3>SIP Call Ended</h3><p>Scenario ID - {props.ScenarioId}</p>
+            <p>Event - {props.EventName}</p>
+            <p>Queue - {props.QueueDisplayName}</p>
+            <p>Caller Name - {props.RemotePartyUri}</p>
+            <p>Caller Number - {props.RemotePartyId}</p>
+            <p>Call Start Date/Time - {props.CallStartDateTime}</p>
+            <p>Call End Date/Time - {props.CallEndDateTime}</p>
+            <p>Call Length - {props.CallLength}</p>
+            <p>Talk Time - {props.TalkTime}</p>
+            <p>Wait Time - {props.WaitTime}</p>
+            <p>Callback Requested? - {props.CallbackRequested == true ? 'true' : 'false'}</p>
+            <p>Timed out? - {props.Timeout == true ? 'true' : 'false'}</p>
+            <p>Abandoned? - {props.Abandoned == true ? 'true' : 'false'}</p>
+            <p>Service Level Achieved? - {props.ServiceLevelAchieved == true ? 'true' : 'false'}</p>
         </div>
     );
 }

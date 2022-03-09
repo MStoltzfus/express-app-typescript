@@ -58,7 +58,7 @@ interface endPstnCall {
     CallbackRequested: boolean;
     Timeout: boolean;
     Abandoned: boolean;
-    ServiceLevelAchieved: string;
+    ServiceLevelAchieved: boolean;
 }
 
 interface endSipCall {
@@ -75,7 +75,7 @@ interface endSipCall {
     CallbackRequested: boolean;
     Timeout: boolean;
     Abandoned: boolean;
-    ServiceLevelAchieved: string;
+    ServiceLevelAchieved: boolean;
 }
 
 export { newPstnQueueCall, newSipQueueCall, abandonedPstnCall, abandonedSipCall, endPstnCall, endSipCall };

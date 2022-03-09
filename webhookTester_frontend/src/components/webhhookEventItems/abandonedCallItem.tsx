@@ -17,15 +17,16 @@ function abandonedCall( props:any ): h.JSX.Element {
 function abandonedPstnCallItem( props: abandonedPstnCall ) {
     return (
         <div>
-            <p>{props.ScenarioId}</p>
-            <p>{props.EventName}</p>
-            <p>{props.QueueDisplayName}</p>
-            <p>{props.RemotePartyName}</p>
-            <p>{props.RemotePartyNumber}</p>
-            <p>{props.CallStartDateTime}</p>
-            <p>{props.CallEndDateTime}</p>
-            <p>{props.CallLength}</p>
-            <p>{props.CallbackRequested}</p>
+            <h3>PSTN Call Abandoned</h3>
+            <p>Scenario ID - {props.ScenarioId}</p>
+            <p>Event - {props.EventName}</p>
+            <p>Queue - {props.QueueDisplayName}</p>
+            <p>Caller Name - {props.RemotePartyName}</p>
+            <p>Caller Number - {props.RemotePartyNumber}</p>
+            <p>Call Start Date/Time - {props.CallStartDateTime}</p>
+            <p>Call End Date/Time - {props.CallEndDateTime}</p>
+            <p>Call Length - {props.CallLength}</p>
+            <p>Callback Requested? - {props.CallbackRequested == true ? 'true' : 'false'}</p>
         </div>
     );
 }
@@ -33,15 +34,16 @@ function abandonedPstnCallItem( props: abandonedPstnCall ) {
 function abandonedSipCallItem( props: abandonedSipCall ) {
     return (
         <div>
-            <p>{props.ScenarioId}</p>
-            <p>{props.EventName}</p>
-            <p>{props.QueueDisplayName}</p>
-            <p>{props.RemotePartyUri}</p>
-            <p>{props.RemotePartyId}</p>
-            <p>{props.CallStartDateTime}</p>
-            <p>{props.CallEndDateTime}</p>
-            <p>{props.CallLength}</p>
-            <p>{props.CallbackRequested}</p>
+        <h3>SIP Call Abandoned</h3>
+        <p>Scenario ID - {props.ScenarioId}</p>
+        <p>Event - {props.EventName}</p>
+        <p>Queue - {props.QueueDisplayName}</p>
+        <p>Caller Name - {props.RemotePartyUri}</p>
+        <p>Caller Number - {props.RemotePartyId}</p>
+        <p>Call Start Date/Time - {props.CallStartDateTime}</p>
+        <p>Call End Date/Time - {props.CallEndDateTime}</p>
+        <p>Call Length - {props.CallLength}</p>
+        <p>Callback Requested? - {props.CallbackRequested == true ? 'true' : 'false'}</p>
         </div>
     );
 }
