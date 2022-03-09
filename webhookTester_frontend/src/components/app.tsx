@@ -17,34 +17,25 @@ const App: FunctionalComponent = () => {
 
     return (
         <div>
-            <div>
-                <header>
-                    <Login />
-                </header>
-            </div>
-            <div id="preact_root">
-                <Stack horizontal horizontalAlign="center">
+            <Stack horizontal>
+                <div id="preact_root">
                     <Stack.Item>
-                        <ul>
+                        <ul style={{listStyle: 'none' }}>
                             {actualWebhookData.map( item => (
-                                <>
+                                <Fragment>
                                     <li key={item.ScenarioId + '_' + ++i}>
-                                        { item.EventName == 'NewQueueCall' ? newQueueCall(item) : null }
-                                        { item.EventName == 'AbandonedCall' ? abandonedCall(item) : null }
-                                        { item.EventName == 'EndCall' ? endCall(item) : null }
+                                        <div style={{outline: '1px solid #ccc', padding: '10px', margin: '10px'}}>
+                                        {item.EventName == 'NewQueueCall' ? newQueueCall( item ) : null}
+                                        {item.EventName == 'AbandonedCall' ? abandonedCall( item ) : null}
+                                        {item.EventName == 'EndCall' ? endCall( item ) : null}
+                                        </div>
                                     </li>
-                                </>
+                                </Fragment>
                             ) )}
                         </ul>
                     </Stack.Item>
-                </Stack> 
-            </div>
-            <div style={{ maxWidth: "250px" }}>
-                <Stack>
-                    <DefaultButton text="Standard" />
-                    <PrimaryButton text="Primary" />
-                </Stack>
-            </div>
+                </div>
+            </Stack>
         </div>
     );
 };
