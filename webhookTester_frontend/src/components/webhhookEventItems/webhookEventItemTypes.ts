@@ -1,81 +1,47 @@
-interface newPstnQueueCall {
+type newQueueCall = {
     ScenarioId: string;
     EventName: string;
     QueueDisplayName: string;
     CallStartDateTime: string;
-    RemotePartyName: string;
-    RemotePartyNumber: string;
-    CallsInQueue: number;
-    NumberOfAvailableAgents: number;
+    RemotePartyName?: string;
+    RemotePartyNumber?: string;
+    RemotePartyUri?: string;
+    RemotePartyId?: string;
+    CallsInQueue?: number;
+    NumberOfAvailableAgents?: number;
 }
 
-interface newSipQueueCall {
+type abandonedCall = {
     ScenarioId: string;
     EventName: string;
     QueueDisplayName: string;
-    RemotePartyUri: string;
-    RemotePartyId: string;
-    CallStartDateTime: string;
-    CallsInQueue: number;
-    NumberOfAvailableAgents: number;
+    RemotePartyName?: string;
+    RemotePartyNumber?: string;
+    RemotePartyUri?: string;
+    RemotePartyId?: string;
+    CallStartDateTime?: string;
+    CallEndDateTime?: string;
+    CallLength?: string;
+    CallbackRequested?: boolean;
 }
 
-interface abandonedPstnCall {
+type endCall = {
     ScenarioId: string;
     EventName: string;
     QueueDisplayName: string;
-    RemotePartyName: string;
-    RemotePartyNumber: string;
-    CallStartDateTime: string;
-    CallEndDateTime: string;
-    CallLength: string;
-    CallbackRequested: boolean;
+    RemotePartyName?: string;
+    RemotePartyNumber?: string;
+    RemotePartyUri?: string;
+    RemotePartyId?: string;
+    CallStartDateTime?: string;
+    CallEndDateTime?: string;
+    CallLength?: string;
+    TalkTime?: string;
+    WaitTime?: string;
+    CallbackRequested?: boolean;
+    TimedOut?: boolean;
+    Abandoned?: boolean;
+    ServiceLevelAchieved?: boolean;
 }
 
-interface abandonedSipCall {
-    ScenarioId: string;
-    EventName: string;
-    QueueDisplayName: string;
-    RemotePartyUri: string;
-    RemotePartyId: string;
-    CallStartDateTime: string;
-    CallEndDateTime: string;
-    CallLength: string;
-    CallbackRequested: boolean;
-}
-
-interface endPstnCall {
-    ScenarioId: string;
-    EventName: string;
-    QueueDisplayName: string;
-    RemotePartyName: string;
-    RemotePartyNumber: string;
-    CallStartDateTime: string;
-    CallEndDateTime: string;
-    CallLength: string;
-    TalkTime: string;
-    WaitTime: string;
-    CallbackRequested: boolean;
-    Timeout: boolean;
-    Abandoned: boolean;
-    ServiceLevelAchieved: boolean;
-}
-
-interface endSipCall {
-    ScenarioId: string;
-    EventName: string;
-    QueueDisplayName: string;
-    RemotePartyUri: string;
-    RemotePartyId: string;
-    CallStartDateTime: string;
-    CallEndDateTime: string;
-    CallLength: string;
-    TalkTime: string;
-    WaitTime: string;
-    CallbackRequested: boolean;
-    Timeout: boolean;
-    Abandoned: boolean;
-    ServiceLevelAchieved: boolean;
-}
-
-export { newPstnQueueCall, newSipQueueCall, abandonedPstnCall, abandonedSipCall, endPstnCall, endSipCall };
+export { newQueueCall, abandonedCall, endCall };
